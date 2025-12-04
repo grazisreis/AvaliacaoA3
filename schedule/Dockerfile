@@ -7,7 +7,7 @@ COPY schedule/src ./src
 
 RUN mvn -q -e -DskipTests package
 
-FROM amazoncorretto:17
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 COPY --from=builder /app/target/*.jar app.jar
